@@ -300,6 +300,60 @@
   }
   .chip b{ color: var(--text); font-weight: 600; }
 
+  /* ---------- Gallery ---------- */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .gallery-card{
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(42,33,23,0.25);
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .gallery-card:hover{
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .gallery-img{
+    aspect-ratio: 4 / 3;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap: 8px;
+    color: var(--muted);
+    background:
+      repeating-linear-gradient(45deg, rgba(243,239,225,0.03) 0px, rgba(243,239,225,0.03) 1px, transparent 1px, transparent 14px),
+      rgba(0,0,0,0.15);
+    border-bottom: 1px dashed var(--line);
+  }
+  .gallery-img svg{ width: 30px; height: 30px; opacity: 0.7; }
+  .gallery-img span{ font-size: 0.8rem; letter-spacing: 0.02em; }
+  .gallery-body{ padding: 20px 22px; }
+  .gallery-tag{
+    display:inline-block;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .gallery-body h3{
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    font-style: italic;
+    color: var(--muted);
+  }
+  .gallery-body p{
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-style: italic;
+    opacity: 0.85;
+  }
+
   /* ---------- How it works ---------- */
   .steps{
     display:grid;
@@ -390,9 +444,13 @@
     .stack-wrap{ order:-1; height: 260px; }
     .section-head{ grid-template-columns: 1fr; }
     .services{ grid-template-columns: 1fr; }
+    .gallery-grid{ grid-template-columns: 1fr 1fr; }
     .steps{ grid-template-columns: 1fr 1fr; }
     .contact-methods{ grid-template-columns: 1fr; }
     header nav{ display:none; }
+  }
+  @media (max-width: 540px){
+    .gallery-grid{ grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -409,6 +467,7 @@
     </div>
     <nav aria-label="Primary">
       <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
       <a href="#how">How it works</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -510,6 +569,98 @@
         <h3>Pickup or delivery</h3>
         <p>Grab it locally, or have it dropped at your door.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Recent builds</h2>
+      <p class="desc">A few jobs that have come through the shop. Swap in your own photos and details below.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <!-- ===== PROJECT CARD 1 — replace image, title, tag, and description ===== -->
+      <div class="gallery-card">
+        <div class="gallery-img">
+          <!-- Replace this placeholder div with: <img src="your-photo.jpg" alt="Description of the project"> -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 15l-5-5-6 6-3-3-4 4"/></svg>
+          <span>Add photo</span>
+        </div>
+        <div class="gallery-body">
+          <span class="gallery-tag">[Material — e.g. PETG]</span>
+          <h3>[Project name]</h3>
+          <p>[Add a short description of this project — what it was, who it was for, or a detail worth mentioning.]</p>
+        </div>
+      </div>
+
+      <!-- ===== PROJECT CARD 2 — replace image, title, tag, and description ===== -->
+      <div class="gallery-card">
+        <div class="gallery-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 15l-5-5-6 6-3-3-4 4"/></svg>
+          <span>Add photo</span>
+        </div>
+        <div class="gallery-body">
+          <span class="gallery-tag">[Material — e.g. PLA]</span>
+          <h3>[Project name]</h3>
+          <p>[Add a short description of this project — what it was, who it was for, or a detail worth mentioning.]</p>
+        </div>
+      </div>
+
+      <!-- ===== PROJECT CARD 3 — replace image, title, tag, and description ===== -->
+      <div class="gallery-card">
+        <div class="gallery-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 15l-5-5-6 6-3-3-4 4"/></svg>
+          <span>Add photo</span>
+        </div>
+        <div class="gallery-body">
+          <span class="gallery-tag">[Material — e.g. Resin]</span>
+          <h3>[Project name]</h3>
+          <p>[Add a short description of this project — what it was, who it was for, or a detail worth mentioning.]</p>
+        </div>
+      </div>
+
+      <!-- ===== PROJECT CARD 4 — replace image, title, tag, and description ===== -->
+      <div class="gallery-card">
+        <div class="gallery-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 15l-5-5-6 6-3-3-4 4"/></svg>
+          <span>Add photo</span>
+        </div>
+        <div class="gallery-body">
+          <span class="gallery-tag">[Material — e.g. ABS]</span>
+          <h3>[Project name]</h3>
+          <p>[Add a short description of this project — what it was, who it was for, or a detail worth mentioning.]</p>
+        </div>
+      </div>
+
+      <!-- ===== PROJECT CARD 5 — replace image, title, tag, and description ===== -->
+      <div class="gallery-card">
+        <div class="gallery-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 15l-5-5-6 6-3-3-4 4"/></svg>
+          <span>Add photo</span>
+        </div>
+        <div class="gallery-body">
+          <span class="gallery-tag">[Material — e.g. TPU]</span>
+          <h3>[Project name]</h3>
+          <p>[Add a short description of this project — what it was, who it was for, or a detail worth mentioning.]</p>
+        </div>
+      </div>
+
+      <!-- ===== PROJECT CARD 6 — replace image, title, tag, and description ===== -->
+      <div class="gallery-card">
+        <div class="gallery-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 15l-5-5-6 6-3-3-4 4"/></svg>
+          <span>Add photo</span>
+        </div>
+        <div class="gallery-body">
+          <span class="gallery-tag">[Material]</span>
+          <h3>[Project name]</h3>
+          <p>[Add a short description of this project — what it was, who it was for, or a detail worth mentioning.]</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
